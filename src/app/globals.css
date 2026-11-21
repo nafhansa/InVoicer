@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-hmif: #f6c34a;
+  --color-hmif-50: #fef9ea;
+  --color-hmif-100: #fdf0c8;
+  --color-hmif-200: #fbe08f;
+  --color-hmif-300: #f8d067;
+  --color-hmif-400: #f6c34a;
+  --color-hmif-500: #e9ab1f;
+  --color-hmif-600: #c88714;
+  --color-ink: #0b0b0b;
+  --color-ink-2: #1a1a1a;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-archivo);
+}
+
+body {
+  background: #f7f5ef;
+  color: #0b0b0b;
+}
+
+/* HMIF logo motif: horizontal black stripes */
+.stripes {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #0b0b0b 0 14px,
+    transparent 14px 22px
+  );
+}
+
+.stripes-thin {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #0b0b0b 0 2px,
+    transparent 2px 9px
+  );
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-area {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
